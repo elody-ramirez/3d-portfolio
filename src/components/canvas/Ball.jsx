@@ -3,7 +3,6 @@ import { Canvas } from "@react-three/fiber"
 import { Decal, Float, OrbitControls, Preload, useTexture } from "@react-three/drei"
 
 import CanvasLoader from '../Loader'
-import { MeshStandardMaterial } from "three"
 
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl])
@@ -35,7 +34,7 @@ const Ball = (props) => {
 const BallCanvas = ({ icon }) => {
   return (
     <Canvas
-      frameloop="demand"
+      frameloop="always"
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
